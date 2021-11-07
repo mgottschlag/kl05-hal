@@ -1,0 +1,25 @@
+[package]
+name = "kl05-hal"
+version = "0.0.1"
+authors = ["Mathias Gottschlag <mgottschlag@gmail.com>"]
+categories = ["embedded"]
+description = "Hardware abstraction layer for NXP KL05 microcontrollers"
+keywords = [
+	"no-std",
+	"arm",
+	"cortex-m",
+	"nxp",
+	"kinetis",
+]
+license = "0BSD"
+repository = "https://github.com/mgottschlag/kl05-hal"
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.7.3"
+embedded-hal = { version = "0.2.5", features = ["unproven"] }
+embedded-time = "0.12.0"
+kl05-pac = { git = "https://github.com/mgottschlag/kl05-pac.git", branch = "master" }
+
+[features]
+rt = ["kl05-pac/rt"]
